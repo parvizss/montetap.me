@@ -1,9 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { initializeApp } from "firebase/app";
 import {
-  getFirestore,
   collection,
   addDoc,
   serverTimestamp,
@@ -14,17 +12,7 @@ import {
   Timestamp,
   FieldValue,
 } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
-
-// ✅ FIREBASE SETUP
-const firebaseConfig = {
-  apiKey: "YOUR_KEY",
-  authDomain: "YOUR_DOMAIN",
-  projectId: "YOUR_PROJECT",
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+import { auth, db } from "../../lib/firebase";
 
 // ✅ TYPES
 export type Listing = {
@@ -47,7 +35,6 @@ export const addListing = async (data: Omit<Listing, "id" | "createdAt">) => {
 // ✅ MY LISTINGS PAGE
 export default function MyListings() {
   const [listings, setListings] = useState<Listing[]>([]);
-  const auth = getAuth(app);
 
   useEffect(() => {
     const user = auth.currentUser;
