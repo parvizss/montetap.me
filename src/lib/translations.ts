@@ -6,7 +6,6 @@ export const languages = [
   { code: "ru", label: "Русский", flag: "🇷🇺" },
 ];
 
-// 'string' yerinə 'any' istifadə edirik ki, 'cats' kimi alt obyektlər xəta verməsin
 export type Translation = Record<string, any>;
 
 export const translations: Record<Language, Translation> = {
@@ -20,6 +19,7 @@ export const translations: Record<Language, Translation> = {
       neqliyyat: "Transport",
       dasinmaz_emlak: "Real Estate",
     },
+    // Əgər aşağıda başqa açarlar (success_login_message və s.) varsa, onları da bura əlavə edin
   },
   me: {
     banner: "Adresa broj jedan za oglase u Crnoj Gori!",
