@@ -6,19 +6,41 @@ export const languages = [
   { code: "ru", label: "Русский", flag: "🇷🇺" },
 ];
 
-export type Translation = Record<string, string>;
+// 'string' yerinə 'any' istifadə edirik ki, 'cats' kimi alt obyektlər xəta verməsin
+export type Translation = Record<string, any>;
 
 export const translations: Record<Language, Translation> = {
   en: {
     banner: "Number one place for ads in Montenegro!",
+    hero_title_1: "Buy, sell, find in",
+    hero_title_accent: "Montenegro",
+    hero_title_2: "!",
     search_button: "Search",
+    cats: {
+      neqliyyat: "Transport",
+      dasinmaz_emlak: "Real Estate",
+    },
   },
   me: {
-    banner: "Najbolji oglasi u Crnoj Gori!",
+    banner: "Adresa broj jedan za oglase u Crnoj Gori!",
+    hero_title_1: "U Crnoj Gori",
+    hero_title_accent: "kupi, prodaj",
+    hero_title_2: ", pronađi!",
     search_button: "Traži",
+    cats: {
+      neqliyyat: "Prevoz",
+      dasinmaz_emlak: "Nekretnine",
+    },
   },
   ru: {
-    banner: "Лучшие объявления в Черногории!",
+    banner: "Новые объявления каждый день!",
+    hero_title_1: "В Черногории",
+    hero_title_accent: "купи, продай",
+    hero_title_2: ", найди!",
     search_button: "Поиск",
+    cats: {
+      neqliyyat: "Транспорт",
+      dasinmaz_emlak: "Недвижимость",
+    },
   },
 };
